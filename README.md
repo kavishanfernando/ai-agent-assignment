@@ -30,6 +30,6 @@ This project implements a modular command-line interface personal assistant in P
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt
-export GEMINI_API_KEY="your_api_key"
+pip install -r requirements.txthttps://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+export GEMINI_API_KEY="AIzaSyAscIdld6hMm7N8WxQtQXE1YJaWHRDWpFo"
 python main.py
