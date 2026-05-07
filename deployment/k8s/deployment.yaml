@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-agent-system
+  labels:
+    app: ai-agent-system
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ai-agent-system
+  template:
+    metadata:
+      labels:
+        app: ai-agent-system
+    spec:
+      containers:
+      - name: ai-agent-container
+        image: your-docker-image:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: ENV_VARIABLE_NAME
+          value: "your_value"
+        volumeMounts:
+        - name: data-volume
+          mountPath: /app/data
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: data-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai-agent-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: ai-agent-system
