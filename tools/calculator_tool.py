@@ -19,6 +19,9 @@ class CalculatorTool(BaseTool):
         except Exception as e:
             return f"Error in calculator tool: {str(e)}"
 
+    def run(self, expression: str) -> str:
+        return self.execute(expression)
+
     def get_declaration(self) -> Dict[str, Any]:
         return {
             "name": self.name,

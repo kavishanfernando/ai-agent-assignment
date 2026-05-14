@@ -11,6 +11,9 @@ class TimeTool(BaseTool):
         now = datetime.now()
         return now.strftime("Current local date and time: %Y-%m-%d %H:%M:%S")
 
+    def run(self) -> str:
+        return self.execute()
+
     def get_declaration(self) -> Dict[str, Any]:
         return {
             "name": self.name,

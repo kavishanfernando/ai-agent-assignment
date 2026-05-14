@@ -17,6 +17,9 @@ class TranslationTool(BaseTool):
         except Exception as e:
             return f"Error in translation tool: {str(e)}"
 
+    def run(self, text: str, target_language: str) -> str:
+        return self.execute(text, target_language)
+
     def get_declaration(self) -> Dict[str, Any]:
         return {
             "name": self.name,

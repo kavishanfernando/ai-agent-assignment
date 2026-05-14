@@ -25,6 +25,9 @@ class FileReaderTool(BaseTool):
         except Exception as e:
             return f"Error in file reader tool: {str(e)}"
 
+    def run(self, file_path: str) -> str:
+        return self.execute(file_path)
+
     def get_declaration(self) -> Dict[str, Any]:
         return {
             "name": self.name,
